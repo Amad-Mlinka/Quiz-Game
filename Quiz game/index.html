@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.4/jasmine.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body ng-controller="myController">
+    <!--Main Screen---------------------------------------------->
+    <div ng-hide="hide_intro">
+      <div>
+        <h1>Odaberite vrstu pitanja</h1>
+        <input type="radio" ng-model="odabir_Vrste" value="multiple_Choice">Multiple Choice<br>
+        <input type="radio" ng-model="odabir_Vrste" value="write_Y">Write your own anwser<br>
+        <input type="radio" ng-model="odabir_Vrste" value="true_False">True/False<br>
+      </div>
+
+      <h1>Rules</h1>
+      <div ng-switch="odabir_Vrste">
+        <div ng-switch-when="multiple_Choice">
+          <h2>Multiple Choice</h2>
+          <p>(tba)</p>
+        </div>
+        <div ng-switch-when="write_Y">
+          <h2>Write your own anwsers</h2>
+          <p>(tba)</p>
+        </div>
+        <div ng-switch-when="true_False">
+          <h2>True/False questions</h2>
+          <p>(tba)</p>
+        </div>
+
+      </div>
+
+      <input type="submit" ng-click="slanje()" ng-model="subdugme" ng-class="odabir_Vrste ? 'subdugme_a' : 'subdugme'">
+    </div>
+    
+    <!----------------------------------------------Main Screen-->
+    <div ng-switch="odabir_Vrste" ng-hide="!hide_intro">
+        <div ng-switch-when="multiple_Choice">
+          <h2>Multiple Choice</h2>
+          <p>(tba)</p>
+        </div>
+        <div ng-switch-when="write_Y">
+          <h2>Write your own anwsers</h2>
+          <p>(tba)</p>
+        </div>
+        <div ng-switch-when="true_False">
+          <h2>True/False questions</h2>
+          <p>(tba)</p>
+        </div>
+
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
